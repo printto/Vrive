@@ -10,7 +10,7 @@ Material:
   m_Name: scotspinetypeb-pine needles
   m_Shader: {fileID: 10511, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,14 +24,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AO: 1.2264152
-    - _BaseLight: 0.12264151
-    - _Cutoff: 0.6698113
-    - _Occlusion: 0.9433962
+    - _AO: 1.1
+    - _BaseLight: 0.89
+    - _Cutoff: 0.43
+    - _Occlusion: 1.6
+    - _SquashAmount: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.03892734, g: 0.066176474, b: 0.040242814, a: 1}
     - _MainTex_ST: {r: 1, g: 1, b: 0, a: 0}
     - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
