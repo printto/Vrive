@@ -320,17 +320,17 @@ PrefabInstance:
     - target: {fileID: 146000012133133230, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionDistance
-      value: 0.19620003
+      value: 0.31437272
       objectReference: {fileID: 0}
     - target: {fileID: 146000012133133230, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.spring
-      value: 40705.574
+      value: 25404.352
       objectReference: {fileID: 0}
     - target: {fileID: 146000012133133230, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.damper
-      value: 6512.892
+      value: 1286.2963
       objectReference: {fileID: 0}
     - target: {fileID: 146000012133133230, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
@@ -340,17 +340,17 @@ PrefabInstance:
     - target: {fileID: 146000013638572144, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.spring
-      value: 34791.484
+      value: 21713.365
       objectReference: {fileID: 0}
     - target: {fileID: 146000013638572144, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.damper
-      value: 5566.6377
+      value: 1099.411
       objectReference: {fileID: 0}
     - target: {fileID: 146000013638572144, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionDistance
-      value: 0.19620001
+      value: 0.31437272
       objectReference: {fileID: 0}
     - target: {fileID: 146000013638572144, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
@@ -360,17 +360,17 @@ PrefabInstance:
     - target: {fileID: 146000011612348708, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.spring
-      value: 34294.42
+      value: 21403.148
       objectReference: {fileID: 0}
     - target: {fileID: 146000011612348708, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.damper
-      value: 5487.1074
+      value: 1083.7037
       objectReference: {fileID: 0}
     - target: {fileID: 146000011612348708, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionDistance
-      value: 0.1962
+      value: 0.31437272
       objectReference: {fileID: 0}
     - target: {fileID: 146000011612348708, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
@@ -380,22 +380,32 @@ PrefabInstance:
     - target: {fileID: 146000011699788318, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.spring
-      value: 40208.508
+      value: 25094.13
       objectReference: {fileID: 0}
     - target: {fileID: 146000011699788318, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionSpring.damper
-      value: 6433.3613
+      value: 1270.5889
       objectReference: {fileID: 0}
     - target: {fileID: 146000011699788318, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_SuspensionDistance
-      value: 0.19620003
+      value: 0.31437272
       objectReference: {fileID: 0}
     - target: {fileID: 146000011699788318, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_ForceAppPointDistance
       value: 0.6772522
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011571154704, guid: 6577377bae7db18429e690f8f8f57881,
+        type: 3}
+      propertyPath: dampingRatio
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011571154704, guid: 6577377bae7db18429e690f8f8f57881,
+        type: 3}
+      propertyPath: naturalFrequency
+      value: 7.9
       objectReference: {fileID: 0}
     - target: {fileID: 114000013910545014, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
@@ -438,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1404,7 +1414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1657579779
 Transform:
   m_ObjectHideFlags: 0
