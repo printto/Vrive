@@ -7,33 +7,21 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    [SerializeField] private Text uiText;
-    [SerializeField] private float mainTimer;
-    public Animator animator;
+    public Text timerText;
+    private float startTime;
 
-    private float timer;
-    public static bool canCount = true;
-    //private bool doOnce = false;
-
-     void Start()
+    private void Start()
     {
-        timer = mainTimer;
-    }
-
-    void Update()
-    {    
-        ScoreManager.AddScore(Time.deltaTime);
-        Debug.Log(ScoreManager.GetScore());
+        startTime = Time.time;
     }
 
 
-    private void DeadScene()
+    private void Update()
     {
-        //SceneManager.LoadScene(2);
-        //Initiate.Fade("DeadScene", Color.black, 6f);
-        //SceneTransition.setAnimator(animator);
-        //SceneTransition.setScene("DeadScene");
-        //SceneTransition.getScene();
-        //StartCoroutine(SceneTransition.LoadScene());
+        float t = Time.time - startTime;
+        string minutes = ((int) t / 60).ToString();
+        string seconds = (t % 60).ToString("f2");
+
+        timerText.text = minutes + ":" + seconds;
     }
 }
