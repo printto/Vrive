@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class checkPoint : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class checkPoint : MonoBehaviour {
     private static float y = 0;
     private static float z = 0;
     
+    public Text timeLap;
+    
     static Transform ThisTransform;
 
     static GameObject playerObject;
@@ -17,7 +20,7 @@ public class checkPoint : MonoBehaviour {
     private void Start()
     {
         
-        playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerObject = GameObject.FindGameObjectWithTag("Vehicles");
     }
 
     public static void setSavePoint(float x, float y, float z)
@@ -29,23 +32,32 @@ public class checkPoint : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.tag.Equals("Vehicles"))
         {
             ThisTransform = transform;
-            //Debug.Log("Checkpoint!");
+            Debug.Log("Checkpoint!");
             Vector3 checkPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             setSavePoint(checkPos.x, checkPos.y, checkPos.z);
-            //Debug.Log(checkPos.x.ToString()+", "+ checkPos.y.ToString()+", "+ checkPos.z.ToString());
-            //PlayerNew.checkPoint = this;
+            Debug.Log(checkPos.x.ToString()+", "+ checkPos.y.ToString()+", "+ checkPos.z.ToString());
+            PlayerNew.checkPoint = this;
             Debug.Log(checkPos.x.ToString() + ", " + checkPos.y.ToString());
+            StartCoroutine(DisplayCheckpointTime());
         }
     }
 
+    IEnumerator DisplayCheckpointTime() {
+        string temp = CurrentTime.GetCurrentTimeString;
+        timeLap.text = temp;
+        yield return new WaitForSeconds(2f);
+        timeLap.text = "";
+
+    }
+
     public void respawnPlayerAtCheckPoint()
-    {   
-        //playerObject.transform.SetPositionAndRotation(new Vector3(ThisTransform.position.x, ThisTransform.position.y + 0.5f, playerObject.GetComponent<PlayerNew>().LaneZs[lane]), ThisTransform.rotation);
-        //playerObject.GetComponent<PlayerNew>().currentLane = lane;
+    {
+        playerObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+        playerObject.transform.SetPositionAndRotation(new Vector3(ThisTransform.position.x, ThisTransform.position.y + 0.5f, ThisTransform.position.z), ThisTransform.rotation);
         Debug.Log("Respawned!");
-       // Debug.Log(checkPoint.x.ToString() + ", " + checkPoint.y.ToString() + ", " + playerObject.GetComponent<PlayerNew>().LaneZs[lane]);
+        Debug.Log(checkPoint.x.ToString() + ", " + checkPoint.y.ToString() + ", " + checkPoint.z.ToString());
     }
 }
