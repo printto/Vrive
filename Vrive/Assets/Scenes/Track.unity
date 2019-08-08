@@ -788,6 +788,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.178
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010154303106, guid: 6577377bae7db18429e690f8f8f57881, type: 3}
+      propertyPath: m_Name
+      value: RallyCarChassis
+      objectReference: {fileID: 0}
     - target: {fileID: 33000011804668876, guid: 6577377bae7db18429e690f8f8f57881,
         type: 3}
       propertyPath: m_Mesh
