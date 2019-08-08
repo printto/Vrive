@@ -9,7 +9,7 @@ public class DriftCamera : MonoBehaviour
         public bool updateCameraInUpdate;
         public bool updateCameraInFixedUpdate = true;
         public bool updateCameraInLateUpdate;
-        public KeyCode switchViewKey = KeyCode.Space;
+        //public KeyCode switchViewKey = KeyCode.Comma;
     }
 
     public float smoothing = 6f;
@@ -28,8 +28,8 @@ public class DriftCamera : MonoBehaviour
 
     private void Update ()
     {
-        if (Input.GetKeyDown (advancedOptions.switchViewKey))
-            m_ShowingSideView = !m_ShowingSideView;
+        //if (Input.GetKeyDown (advancedOptions.switchViewKey))
+        //    m_ShowingSideView = !m_ShowingSideView;
 
         if(advancedOptions.updateCameraInUpdate)
             UpdateCamera ();

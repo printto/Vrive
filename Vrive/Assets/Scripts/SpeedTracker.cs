@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpeedTracker : MonoBehaviour
 {
 
-    public Text speedText;
+    public GameObject speedText;
     public GameObject objectToTrack;
 
     // Update is called once per frame
@@ -14,7 +15,8 @@ public class SpeedTracker : MonoBehaviour
     {
         if(speedText != null && objectToTrack != null)
         {
-            speedText.text = ((int)objectToTrack.GetComponent<Rigidbody>().velocity.magnitude) + " KPH";
+            speedText.GetComponent<TextMeshPro>().SetText(((int)objectToTrack.GetComponent<Rigidbody>().velocity.magnitude) + " KPH");
+            //speedText.text = ((int)objectToTrack.GetComponent<Rigidbody>().velocity.magnitude) + " KPH";
         }
     }
 }
