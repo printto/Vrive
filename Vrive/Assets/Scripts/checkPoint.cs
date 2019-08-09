@@ -18,16 +18,21 @@ public class checkPoint : MonoBehaviour {
 
     static GameObject playerObject;
 
-    //Take is as TextMeshPro
-    public GameObject cutTrackText;
+    //Take this as TextMeshPro
+    public GameObject LapsText;
+    public GameObject CuttingTrackText;
 
     //Next checkpoint
     public GameObject nextCheckPoint;
 
     public bool canCheck = false;
     public bool checkPointed = false;
-    public bool nextIsGoal = false;
-    bool isGoal = false;
+    //public bool nextIsGoal = false;
+    public bool isGoal = false;
+
+    //Can add laps here (Only for goal)
+    public int maxLaps = 2;
+    int laps = 0;
 
     private void Start()
     {
@@ -46,14 +51,22 @@ public class checkPoint : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Vehicles"))
         {
-            if (isGoal)
+
+            //For goal
+            if (isGoal && canCheck && maxLaps > laps)
+            {
+                laps++;
+                LapsText.GetComponent<TextMeshPro>().SetText("Lap " + laps + "/" + maxLaps);
+            }
+            else if (isGoal && canCheck)
             {
                 //TODO: Goal screen, record the time
-                cutTrackText.GetComponent<TextMeshPro>().SetText("GOAL~!!");
+                LapsText.GetComponent<TextMeshPro>().SetText("GOAL~!!");
             }
+
+            //All checkpoints
             if (canCheck)
             {
-                cutTrackText.GetComponent<TextMeshPro>().SetText("");
                 ThisTransform = transform;
                 Debug.Log("Checkpoint!");
                 Vector3 checkPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -64,24 +77,24 @@ public class checkPoint : MonoBehaviour {
                 StartCoroutine(DisplayCheckpointTime());
                 nextCheckPoint.GetComponent<checkPoint>().canCheck = true;
                 nextCheckPoint.GetComponent<checkPoint>().checkPointed = false;
-                if (nextIsGoal)
+                /*if (nextIsGoal)
                 {
                     nextCheckPoint.GetComponent<checkPoint>().setIsGoal(true);
                 }
+                */
                 checkPointed = true;
                 canCheck = false;
-                
-                //For debug
-                StartCoroutine(DisplayCutTrackText("Checkpoint!"));
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("");
             }
-            else if(!checkPointed)
+            else if (!checkPointed)
             {
-                cutTrackText.GetComponent<TextMeshPro>().SetText("Cutting track!");
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("Wrong checkpoint!");
             }
             else
             {
-                cutTrackText.GetComponent<TextMeshPro>().SetText("");
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("");
             }
+            
         }
     }
 
@@ -92,13 +105,6 @@ public class checkPoint : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         timeLap.GetComponent<TextMeshPro>().SetText("");
         
-    }
-
-    IEnumerator DisplayCutTrackText(string text)
-    {
-        cutTrackText.GetComponent<TextMeshPro>().SetText(text);
-        yield return new WaitForSeconds(2f);
-        cutTrackText.GetComponent<TextMeshPro>().SetText("");
     }
 
     public void respawnPlayerAtCheckPoint()
