@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,11 +12,27 @@ public class checkPoint : MonoBehaviour {
     private static float y = 0;
     private static float z = 0;
     
-    public Text timeLap;
+    public GameObject timeLap;
     
     static Transform ThisTransform;
 
     static GameObject playerObject;
+
+    //Take this as TextMeshPro
+    public GameObject LapsText;
+    public GameObject CuttingTrackText;
+
+    //Next checkpoint
+    public GameObject nextCheckPoint;
+
+    public bool canCheck = false;
+    public bool checkPointed = false;
+    //public bool nextIsGoal = false;
+    public bool isGoal = false;
+
+    //Can add laps here (Only for goal)
+    public int maxLaps = 2;
+    int laps = 0;
 
     private void Start()
     {
@@ -34,23 +51,60 @@ public class checkPoint : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Vehicles"))
         {
-            ThisTransform = transform;
-            Debug.Log("Checkpoint!");
-            Vector3 checkPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            setSavePoint(checkPos.x, checkPos.y, checkPos.z);
-            Debug.Log(checkPos.x.ToString()+", "+ checkPos.y.ToString()+", "+ checkPos.z.ToString());
-            PlayerNew.checkPoint = this;
-            Debug.Log(checkPos.x.ToString() + ", " + checkPos.y.ToString());
-            StartCoroutine(DisplayCheckpointTime());
+
+            //For goal
+            if (isGoal && canCheck && maxLaps > laps)
+            {
+                laps++;
+                LapsText.GetComponent<TextMeshPro>().SetText("Lap " + laps + "/" + maxLaps);
+            }
+            else if (isGoal && canCheck)
+            {
+                //TODO: Goal screen, record the time
+                LapsText.GetComponent<TextMeshPro>().SetText("GOAL~!!");
+            }
+
+            //All checkpoints
+            if (canCheck)
+            {
+                ThisTransform = transform;
+                Debug.Log("Checkpoint!");
+                Vector3 checkPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                setSavePoint(checkPos.x, checkPos.y, checkPos.z);
+                Debug.Log(checkPos.x.ToString() + ", " + checkPos.y.ToString() + ", " + checkPos.z.ToString());
+                PlayerNew.checkPoint = this;
+                Debug.Log(checkPos.x.ToString() + ", " + checkPos.y.ToString());
+                StartCoroutine(DisplayCheckpointTime());
+                nextCheckPoint.GetComponent<checkPoint>().canCheck = true;
+                nextCheckPoint.GetComponent<checkPoint>().checkPointed = false;
+                /*if (nextIsGoal)
+                {
+                    nextCheckPoint.GetComponent<checkPoint>().setIsGoal(true);
+                }
+                */
+                checkPointed = true;
+                canCheck = false;
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("");
+            }
+            else if (!checkPointed)
+            {
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("Wrong checkpoint!");
+            }
+            else
+            {
+                CuttingTrackText.GetComponent<TextMeshPro>().SetText("");
+            }
+            
         }
     }
 
     IEnumerator DisplayCheckpointTime() {
         string temp = CurrentTime.GetCurrentTimeString;
-        timeLap.text = temp;
+        //timeLap.text = temp;
+        timeLap.GetComponent<TextMeshPro>().SetText(temp);
         yield return new WaitForSeconds(2f);
-        timeLap.text = "";
-
+        timeLap.GetComponent<TextMeshPro>().SetText("");
+        
     }
 
     public void respawnPlayerAtCheckPoint()
@@ -60,4 +114,10 @@ public class checkPoint : MonoBehaviour {
         Debug.Log("Respawned!");
         Debug.Log(checkPoint.x.ToString() + ", " + checkPoint.y.ToString() + ", " + checkPoint.z.ToString());
     }
+    
+    public void setIsGoal(bool isGoalParam)
+    {
+        isGoal = isGoalParam;
+    }
+
 }
