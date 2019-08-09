@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLap: {fileID: 414619088}
---- !u!43 &519821337
+--- !u!43 &555315216
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1513,7 +1513,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1390517137
+--- !u!21 &1304172649
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2508,7 +2508,7 @@ PrefabInstance:
     - target: {fileID: 4953632987979657854, guid: 260ae8d65fed241498efcb38de6ff1ed,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953632987979408262, guid: 260ae8d65fed241498efcb38de6ff1ed,
         type: 3}
@@ -2519,12 +2519,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1390517137}
+      objectReference: {fileID: 1304172649}
     - target: {fileID: 4953632987978570076, guid: 260ae8d65fed241498efcb38de6ff1ed,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 519821337}
+      objectReference: {fileID: 555315216}
     - target: {fileID: 4953632989981459836, guid: 260ae8d65fed241498efcb38de6ff1ed,
         type: 3}
       propertyPath: m_LocalRotation.y
