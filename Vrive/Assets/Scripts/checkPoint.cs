@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class checkPoint : MonoBehaviour {
     private static float y = 0;
     private static float z = 0;
     
-    public Text timeLap;
+    public GameObject timeLap;
     
     static Transform ThisTransform;
 
@@ -47,10 +48,11 @@ public class checkPoint : MonoBehaviour {
 
     IEnumerator DisplayCheckpointTime() {
         string temp = CurrentTime.GetCurrentTimeString;
-        timeLap.text = temp;
+        //timeLap.text = temp;
+        timeLap.GetComponent<TextMeshPro>().SetText(temp);
         yield return new WaitForSeconds(2f);
-        timeLap.text = "";
-
+        timeLap.GetComponent<TextMeshPro>().SetText("");
+        
     }
 
     public void respawnPlayerAtCheckPoint()
