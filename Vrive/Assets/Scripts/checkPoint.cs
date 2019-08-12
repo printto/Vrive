@@ -60,6 +60,7 @@ public class checkPoint : MonoBehaviour {
             }
             else if (isGoal && canCheck)
             {
+                
                 LapsText.GetComponent<TextMeshPro>().SetText("GOAL~!!");
                 SceneManager.LoadScene("Ending");
             }
