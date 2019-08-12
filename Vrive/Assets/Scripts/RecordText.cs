@@ -8,7 +8,7 @@ public class RecordText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<TextMeshPro>().text = "Time Record\n" + LastRecordTime.GetString();
+        GetComponent<TextMeshPro>().text = "Record Time\n" + LastRecordTime.GetString();
     }
     
 }
