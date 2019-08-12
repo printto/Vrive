@@ -60,8 +60,8 @@ public class checkPoint : MonoBehaviour {
             }
             else if (isGoal && canCheck)
             {
-                //TODO: Goal screen, record the time
                 LapsText.GetComponent<TextMeshPro>().SetText("GOAL~!!");
+                SceneManager.LoadScene("Ending");
             }
 
             //All checkpoints
@@ -77,11 +77,6 @@ public class checkPoint : MonoBehaviour {
                 StartCoroutine(DisplayCheckpointTime());
                 nextCheckPoint.GetComponent<checkPoint>().canCheck = true;
                 nextCheckPoint.GetComponent<checkPoint>().checkPointed = false;
-                /*if (nextIsGoal)
-                {
-                    nextCheckPoint.GetComponent<checkPoint>().setIsGoal(true);
-                }
-                */
                 checkPointed = true;
                 canCheck = false;
                 CuttingTrackText.GetComponent<TextMeshPro>().SetText("");
