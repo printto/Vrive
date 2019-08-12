@@ -25,11 +25,14 @@ public class Timer : MonoBehaviour {
         //timerText.text = minutes + ":" + seconds;
         timerText.GetComponent<TextMeshPro>().SetText(minutes + ":" + seconds);
         CurrentTime.GetCurrentTimeString = timerText.GetComponent<TextMeshPro>().text;
+        LastRecordTime.record = Time.time - startTime;
     }
 
+    /*
     public void RecordTime()
     {
         LastRecordTime.record = Time.time - startTime;
     }
+    */
 
 }
