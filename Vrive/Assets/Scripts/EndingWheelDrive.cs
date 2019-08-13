@@ -52,7 +52,7 @@ public class EndingWheelDrive : MonoBehaviour
     IEnumerator SimDrive()
     {
         SimVertical = 1;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         SimHorizontal = 1;
         yield return new WaitForSeconds(1f);
         SimVertical = 0;
