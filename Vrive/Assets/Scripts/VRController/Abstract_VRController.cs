@@ -10,8 +10,8 @@ public class Abstract_VRController : MonoBehaviour
     public SteamVR_Action_Boolean _InputBacking;
     public SteamVR_Action_Boolean _InputBreaking;
 
-    public SteamVR_Input_Sources leftHand = SteamVR_Input_Sources.LeftHand;
-    public SteamVR_Input_Sources rightHand = SteamVR_Input_Sources.RightHand;
+    private SteamVR_Input_Sources leftHand = SteamVR_Input_Sources.LeftHand;
+    private SteamVR_Input_Sources rightHand = SteamVR_Input_Sources.RightHand;
 
     protected bool isForwarding;
     protected bool isBacking;
