@@ -6,6 +6,7 @@ using Valve.VR;
 
 public class VRControllerRight : MonoBehaviour
 {
+    /*
     public SteamVR_Action_Boolean grabPinch;
     public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
 
@@ -14,6 +15,8 @@ public class VRControllerRight : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
+        Debug.Log("Enabled");
+        Debug.Log(grabPinch);
         if (grabPinch != null)
         {
             grabPinch.AddOnChangeListener(OnTriggerPressedOrReleased, inputSource);
@@ -22,6 +25,7 @@ public class VRControllerRight : MonoBehaviour
 
     private void OnTriggerPressedOrReleased(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
     {
+        Debug.Log("SADSAFSADSAD");
         DDebug.Instance.Log("From action : " + fromAction.ToString());
 
         DDebug.Instance.Log("From source : " + fromSource.ToString());
@@ -44,12 +48,12 @@ public class VRControllerRight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Started");
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
+    }*/
 }
