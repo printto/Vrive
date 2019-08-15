@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+
+/***
+ * TODO // REMOVE THIS LATER
+ */
 public class MyActionScript : MonoBehaviour
 {
     // a reference to the action

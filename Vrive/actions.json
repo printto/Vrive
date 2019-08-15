@@ -74,7 +74,15 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/Test/in/SphereAppearDisappear",
+      "name": "/actions/Vehicle/in/Forwarding",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Vehicle/in/Backing",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Vehicle/in/Breaking",
       "type": "boolean"
     }
   ],
@@ -96,7 +104,7 @@
       "usage": "single"
     },
     {
-      "name": "/actions/Test",
+      "name": "/actions/Vehicle",
       "usage": "single"
     }
   ],

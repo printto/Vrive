@@ -25,7 +25,7 @@ namespace Valve.VR
         
         private static SteamVR_Input_ActionSet_mixedreality p_mixedreality;
         
-        private static SteamVR_Input_ActionSet_Test p_Test;
+        private static SteamVR_Input_ActionSet_Vehicle p_Vehicle;
         
         public static SteamVR_Input_ActionSet_default _default
         {
@@ -59,11 +59,11 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Input_ActionSet_Test Test
+        public static SteamVR_Input_ActionSet_Vehicle Vehicle
         {
             get
             {
-                return SteamVR_Actions.p_Test.GetCopy<SteamVR_Input_ActionSet_Test>();
+                return SteamVR_Actions.p_Vehicle.GetCopy<SteamVR_Input_ActionSet_Vehicle>();
             }
         }
         
@@ -73,13 +73,13 @@ namespace Valve.VR
             SteamVR_Actions.p_platformer = ((SteamVR_Input_ActionSet_platformer)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_platformer>("/actions/platformer")));
             SteamVR_Actions.p_buggy = ((SteamVR_Input_ActionSet_buggy)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_buggy>("/actions/buggy")));
             SteamVR_Actions.p_mixedreality = ((SteamVR_Input_ActionSet_mixedreality)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_mixedreality>("/actions/mixedreality")));
-            SteamVR_Actions.p_Test = ((SteamVR_Input_ActionSet_Test)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_Test>("/actions/Test")));
+            SteamVR_Actions.p_Vehicle = ((SteamVR_Input_ActionSet_Vehicle)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_Vehicle>("/actions/Vehicle")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
                     SteamVR_Actions._default,
                     SteamVR_Actions.platformer,
                     SteamVR_Actions.buggy,
                     SteamVR_Actions.mixedreality,
-                    SteamVR_Actions.Test};
+                    SteamVR_Actions.Vehicle};
         }
     }
 }

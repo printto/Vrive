@@ -51,7 +51,11 @@ namespace Valve.VR
         
         private static SteamVR_Action_Pose p_mixedreality_ExternalCamera;
         
-        private static SteamVR_Action_Boolean p_test_SphereAppearDisappear;
+        private static SteamVR_Action_Boolean p_vehicle_Forwarding;
+        
+        private static SteamVR_Action_Boolean p_vehicle_Backing;
+        
+        private static SteamVR_Action_Boolean p_vehicle_Breaking;
         
         public static SteamVR_Action_Boolean default_InteractUI
         {
@@ -189,11 +193,27 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Boolean test_SphereAppearDisappear
+        public static SteamVR_Action_Boolean vehicle_Forwarding
         {
             get
             {
-                return SteamVR_Actions.p_test_SphereAppearDisappear.GetCopy<SteamVR_Action_Boolean>();
+                return SteamVR_Actions.p_vehicle_Forwarding.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean vehicle_Backing
+        {
+            get
+            {
+                return SteamVR_Actions.p_vehicle_Backing.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean vehicle_Breaking
+        {
+            get
+            {
+                return SteamVR_Actions.p_vehicle_Breaking.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
@@ -217,7 +237,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.test_SphereAppearDisappear};
+                    SteamVR_Actions.vehicle_Forwarding,
+                    SteamVR_Actions.vehicle_Backing,
+                    SteamVR_Actions.vehicle_Breaking};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
                     SteamVR_Actions.default_Teleport,
@@ -235,7 +257,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.test_SphereAppearDisappear};
+                    SteamVR_Actions.vehicle_Forwarding,
+                    SteamVR_Actions.vehicle_Backing,
+                    SteamVR_Actions.vehicle_Breaking};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -252,7 +276,9 @@ namespace Valve.VR
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.test_SphereAppearDisappear};
+                    SteamVR_Actions.vehicle_Forwarding,
+                    SteamVR_Actions.vehicle_Backing,
+                    SteamVR_Actions.vehicle_Breaking};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
@@ -276,7 +302,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.test_SphereAppearDisappear};
+                    SteamVR_Actions.vehicle_Forwarding,
+                    SteamVR_Actions.vehicle_Backing,
+                    SteamVR_Actions.vehicle_Breaking};
         }
         
         private static void PreInitActions()
@@ -298,7 +326,9 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Brake = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Brake")));
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
-            SteamVR_Actions.p_test_SphereAppearDisappear = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Test/in/SphereAppearDisappear")));
+            SteamVR_Actions.p_vehicle_Forwarding = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Vehicle/in/Forwarding")));
+            SteamVR_Actions.p_vehicle_Backing = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Vehicle/in/Backing")));
+            SteamVR_Actions.p_vehicle_Breaking = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Vehicle/in/Breaking")));
         }
     }
 }
