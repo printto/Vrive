@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class VRControllerRight : Abstract_VRController
+public class VRController : Abstract_VRController
 {
     public override void ForwardingDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {

@@ -17,6 +17,8 @@ public class Abstract_VRController : MonoBehaviour
     protected bool isBacking;
     protected bool isBreaking;
 
+    public VR_WheelDrive wheelDrive;
+
     /**
      * Called when component actived or enabled
      */
@@ -58,6 +60,13 @@ public class Abstract_VRController : MonoBehaviour
     private void FixedUpdate()
     {
         // handle movement stuff here
+        int backing = isBacking ? 1 : 0;
+        int forwarding = isForwarding ? 1 : 0;
+
+        int VerticalDrive = forwarding - backing;
+        wheelDrive.VerticalDrive = VerticalDrive;
+
+        wheelDrive.HandbreakDrive = isBacking;
     }
 
     #region RequiredOverride
