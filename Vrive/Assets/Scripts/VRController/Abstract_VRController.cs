@@ -66,7 +66,11 @@ public class Abstract_VRController : MonoBehaviour
         int VerticalDrive = forwarding - backing;
         wheelDrive.VerticalDrive = VerticalDrive;
 
-        wheelDrive.HandbreakDrive = isBacking;
+        Debug.Log(VerticalDrive);
+        wheelDrive.HandbreakDrive = isBreaking;
+
+        // reset
+
     }
 
     #region RequiredOverride
