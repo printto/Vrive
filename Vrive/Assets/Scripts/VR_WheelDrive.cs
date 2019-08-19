@@ -66,7 +66,7 @@ public class VR_WheelDrive : MonoBehaviour
         m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
         //TODO: Change these to HorizontalDrive
-        float angle = maxAngle * Input.GetAxis("Horizontal");
+        float angle = maxAngle * HorizontalDrive;
         float torque = maxTorque * VerticalDrive;
 
         float handBrake = HandbreakDrive ? brakeTorque : 0;
