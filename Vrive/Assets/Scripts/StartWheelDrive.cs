@@ -45,19 +45,20 @@ public class StartWheelDrive : MonoBehaviour
         StartCoroutine(SimDrive());
 	}
 
-    int SimHorizontal = 0;
+    float SimHorizontal = 0;
     int SimVertical = 0;
     bool SimSpace = false;
 
     IEnumerator SimDrive()
     {
         SimVertical = 1;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.1f);
         SimHorizontal = 0;
         yield return new WaitForSeconds(0.5f);
         SimVertical = 0;
         SimSpace = true;
-        SimHorizontal = 0;
+        yield return new WaitForSeconds(0.2f);
+        SimHorizontal = -0.2f;
     }
 
     // This is a really simple approach to updating wheels.
