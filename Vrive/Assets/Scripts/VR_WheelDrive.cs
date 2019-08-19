@@ -26,7 +26,7 @@ public class VR_WheelDrive : MonoBehaviour
     private WheelCollider[] m_Wheels;
 
     [HideInInspector]
-    public int HorizontalDrive = 0;
+    public float HorizontalDrive = 0;
     [HideInInspector]
     public int VerticalDrive = 0;
     [HideInInspector]
