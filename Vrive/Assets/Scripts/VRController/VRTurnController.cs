@@ -32,13 +32,13 @@ public class VRTurnController : MonoBehaviour
 
         if (VRControllers[0].transform.localPosition.x < VRControllers[1].transform.localPosition.x)
         {
-            DDebug.Instance.Log("0");
+            // DDebug.Instance.Log("0");
             leftController = VRControllers[0].transform;
             rightController = VRControllers[1].transform;
         }
         else
         {
-            DDebug.Instance.Log("1");
+            // DDebug.Instance.Log("1");
             leftController = VRControllers[1].transform;
             rightController = VRControllers[0].transform;
         }
@@ -73,7 +73,7 @@ public class VRTurnController : MonoBehaviour
             HorizontalDrive = (leftController.localPosition.y - rightController.localPosition.y) * TurnRate;
         }
 
-        DDebug.Instance.Log("HorizontalDrive float : " + HorizontalDrive);
+        // DDebug.Instance.Log("HorizontalDrive float : " + HorizontalDrive);
         Debug.Log("HorizontalDrive float : " + HorizontalDrive);
 
         wheelDrive.HorizontalDrive = HorizontalDrive;
