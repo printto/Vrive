@@ -10,8 +10,8 @@ public class VR_WheelDrive : MonoBehaviour
     public float maxTorque = 300f;
     [Tooltip("Maximum brake torque applied to the driving wheels")]
     public float brakeTorque = 30000f;
-    [Tooltip("If you need the visual wheels to be attached automatically, drag the wheel shape here.")]
-    public GameObject wheelShape;
+    //[Tooltip("If you need the visual wheels to be attached automatically, drag the wheel shape here.")]
+    //public GameObject wheelShape;
 
     [Tooltip("The vehicle's speed when the physics engine can use different amount of sub-steps (in m/s).")]
     public float criticalSpeed = 5f;
@@ -43,11 +43,11 @@ public class VR_WheelDrive : MonoBehaviour
             var wheel = m_Wheels[i];
 
             // Create wheel shapes only when needed.
-            if (wheelShape != null)
-            {
-                var ws = Instantiate(wheelShape);
-                ws.transform.parent = wheel.transform;
-            }
+            // if (wheelShape != null)
+            // {
+            //     var ws = Instantiate(wheelShape);
+            //     ws.transform.parent = wheel.transform;
+            // }
         }
     }
 
@@ -93,17 +93,17 @@ public class VR_WheelDrive : MonoBehaviour
             }
 
             // Update visual wheels if any.
-            if (wheelShape)
-            {
-                Quaternion q;
-                Vector3 p;
-                wheel.GetWorldPose(out p, out q);
+            // if (wheelShape)
+            // {
+            //     Quaternion q;
+            //     Vector3 p;
+            //     wheel.GetWorldPose(out p, out q);
 
-                // Assume that the only child of the wheelcollider is the wheel shape.
-                Transform shapeTransform = wheel.transform.GetChild(0);
-                shapeTransform.position = p;
-                shapeTransform.rotation = q;
-            }
+            //     // Assume that the only child of the wheelcollider is the wheel shape.
+            //     Transform shapeTransform = wheel.transform.GetChild(0);
+            //     shapeTransform.position = p;
+            //     shapeTransform.rotation = q;
+            // }
         }
     }
 }
