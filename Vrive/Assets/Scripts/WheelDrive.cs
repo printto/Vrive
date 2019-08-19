@@ -36,7 +36,10 @@ public class WheelDrive : MonoBehaviour
     // Find all the WheelColliders down in the hierarchy.
     void Start()
     {
-
+        if (SteamVR.settings != null)
+        {
+            return;
+        }
         m_Wheels = GetComponentsInChildren<WheelCollider>();
 
         for (int i = 0; i < m_Wheels.Length; ++i)
