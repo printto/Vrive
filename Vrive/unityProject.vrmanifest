@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vrive.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\thitiwattho\\Desktop\\vrive\\Vrive\\actions.json",
+      "action_manifest_path": "C:\\Users\\PappimPip\\Documents\\Vrive\\Vrive\\actions.json",
       "strings": {
         "en_us": {
           "name": "Vrive [Testing]"
