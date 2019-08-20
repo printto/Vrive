@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 170952029}
   m_Layer: 0
   m_Name: Controller (left)
-  m_TagString: Untagged
+  m_TagString: Controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 237674236}
   m_Layer: 0
   m_Name: Controller (right)
-  m_TagString: Untagged
+  m_TagString: Controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
     m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
---- !u!43 &434195320
+--- !u!43 &334720977
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1664,8 +1664,9 @@ GameObject:
   - component: {fileID: 1048383647}
   - component: {fileID: 1048383646}
   - component: {fileID: 1048383645}
+  - component: {fileID: 1048383649}
   m_Layer: 0
-  m_Name: '[OuterCameraRig]'
+  m_Name: '[CameraRig]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,7 +1706,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048383644}
-  m_Mesh: {fileID: 434195320}
+  m_Mesh: {fileID: 334720977}
 --- !u!23 &1048383647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1723,7 +1724,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1977018118}
+  - {fileID: 2023598423}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1760,6 +1761,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 3.989, y: -167.17001, z: -1.7980001}
+--- !u!114 &1048383649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048383644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae44d3f56cd51e4a9f7464471e89f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1069884272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4953215723006920377, guid: 260ae8d65fed241498efcb38de6ff1ed,
@@ -2778,7 +2791,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!21 &1977018118
+--- !u!21 &2023598423
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0

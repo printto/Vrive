@@ -13,19 +13,20 @@ public class VRTurnController : MonoBehaviour
     public float MaxDistance = 1f; // Maximum distance that turn = 1
     public float TurnRate = 0.2f;
 
-    [Header("VR Controllers Stick in the CameraRig")]
-    public GameObject[] VRControllers;
+    // [Header("VR Controllers Stick in the CameraRig")]
+    // public GameObject[] VRControllers;
     // Start is called before the first frame update
     void Start()
     {
-        if (VRControllers.Length < 2)
-        {
-            Debug.LogWarning("Controller might be missing!");
-        }
+        // if (VRControllers.Length < 2)
+        // {
+        //     Debug.LogWarning("Controller might be missing!");
+        // }
     }
 
     void FixedUpdate()
     {
+        GameObject[] VRControllers = GameObject.FindGameObjectsWithTag("Controller");
         // Determine which one is left / right;
         Transform rightController;
         Transform leftController;
@@ -74,7 +75,7 @@ public class VRTurnController : MonoBehaviour
         }
 
         // DDebug.Instance.Log("HorizontalDrive float : " + HorizontalDrive);
-        Debug.Log("HorizontalDrive float : " + HorizontalDrive);
+        // Debug.Log("HorizontalDrive float : " + HorizontalDrive);
 
         wheelDrive.HorizontalDrive = HorizontalDrive;
     }
