@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class startGame : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class startGame : MonoBehaviour
     {
         if(other.gameObject.tag.Equals("hand"))
         {
-            SceneManager.LoadScene("Track");
+            //SceneManager.LoadScene("Track");
+            SteamVR_LoadLevel.Begin("Track");
         }
     }
 }
