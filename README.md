@@ -15,7 +15,7 @@
 - Visual Code
 
 ## Compiling the code
-Nothing required to compile our code at the moment.
+SteamVR is used for Unity testing and compiling.
 
 ## External links
 - [Github Repository](https://github.com/ziveso/Vrive)
